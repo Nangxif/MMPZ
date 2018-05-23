@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>买卖铺子-做自己的买卖</title>
+	<link rel="shortcut icon" href="/public/img/favicon.ico"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/public/css/home-375.css">
+	<link rel="stylesheet" type="text/css" href="/public/css/home-1080.css">
+	<link rel="stylesheet" type="text/css" href="/public/css/home.common.css">
+	<link rel="stylesheet" type="text/css" href="/public/css/iconfont.css">
+</head>
+<body>
+    <!--The StartLine of the navigation bar-->
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container-fluid"> 
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#example-navbar-collapse">
+				<span class="sr-only">切换导航</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#"><span class="mmpz_icon"></span><span class="mmpz_font">MMPZ</span></a>
+		</div>
+		<div class="collapse navbar-collapse" id="example-navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="/">主页</a></li>
+                {% if userInfo._id %}
+                <li><a href="javascript:;">登录状态，无法注册</a></li>
+                <li><a href="javascript:;">{{userInfo.username}}已登录</a></li>
+                {% else %}
+                <li><a href="/api/register">注册</a></li>
+                <li><a href="/api/login">登录</a></li>
+                {% endif %}
+			</ul>
+		</div>
+		</div>
+	</nav>
+	<!--The EndLine of the navigation bar-->
+	<!--The StartLine of the Carousel-->
+	<div id="myCarousel" class="carousel slide">
+	    <!-- 轮播（Carousel）指标 -->
+	    <ol class="carousel-indicators">
+	        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+	        <li data-target="#myCarousel" data-slide-to="1"></li>
+	        <li data-target="#myCarousel" data-slide-to="2"></li>
+	    </ol>   
+	    <!-- 轮播（Carousel）项目 -->
+	    <div class="carousel-inner">
+	        <div class="item active">
+	            <img src="/public/img/good_1.png" alt="First slide">
+	        </div>
+	        <div class="item">
+	            <img src="/public/img/good_2.png" alt="Second slide">
+	        </div>
+	        <div class="item">
+	            <img src="/public/img/good_3.png" alt="Third slide">
+	        </div>
+	    </div>
+	    <!-- 轮播（Carousel）导航 -->
+	    <a class="carousel-control left" href="#myCarousel" 
+	        data-slide="prev">
+	    </a>
+	    <a class="carousel-control right" href="#myCarousel" 
+	        data-slide="next">
+	    </a>
+	</div>
+	<!--The EndLine of the Carousel-->
+	<!--The StartLine of the GoodList-->
+	<!--父盒子-->
+    <div id="main">
+		<!--推荐-->
+
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                <a id="tuijian"></a>
+				<span>推荐</span>
+            </div>
+        </div>
+
+        <!--单个盒子-->
+        <a class="box" data-toggle="modal" data-target="#myBuyModal" >
+             <!--图片盒子-->
+            <div class="pic">
+                <img src="" id="tuijiant1"/>
+            </div>
+            <div class="details">
+                <span class="description" id="tuijiand1"></span>
+                <span class="price"><i style="font-size: 16px;">￥</i><span id="tuijianp1"></span></span><span class="moreDetail">...</span>
+                <span id="tuijian1data" style="display: none;"></span>
+            </div>
+        </a>
+
+        <!--单个盒子-->
+        <a class="box" data-toggle="modal" data-target="#myBuyModal">
+            <!--图片盒子-->
+            <div class="pic">
+                <img src="" id="tuijiant2"/>
+            </div>
+            <div class="details">
+                <span class="description" id="tuijiand2"></span>
+                <span class="price"><i style="font-size: 12px">￥</i><span id="tuijianp2"></span></span><span class="moreDetail">...</span>
+                <span id="tuijian2data" style="display: none;"></span>
+            </div>
+        </a>
+
+
+        <!--服装-->
+
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                <a id="fuzhuang"></a>
+                <span>服装</span>
+            </div>
+        </div>
+
+        <!--单个盒子-->
+        <a class="box" data-toggle="modal" data-target="#myBuyModal">
+            <!--图片盒子-->
+            <div class="pic">
+                <img src="" id="fuzhuangt1"/>
+            </div>
+            <div class="details">
+                <span class="description" id="fuzhuangd1"></span>
+                <span class="price"><i style="font-size: 12px">￥</i><span id="fuzhuangp1"></span></span><span class="moreDetail">...</span>
+                <span id="fuzhuang1data" style="display: none;"></span>
+            </div>
+        </a>
+
+        <!--单个盒子-->
+        <a class="box" data-toggle="modal" data-target="#myBuyModal">
+            <!--图片盒子-->
+            <div class="pic">
+                <img src="" id="fuzhuangt2"/>
+            </div>
+            <div class="details">
+                <span class="description" id="fuzhuangd2"></span>
+                <span class="price"><i style="font-size: 12px">￥</i><span id="fuzhuangp2"></span></span><span class="moreDetail">...</span>
+                <span id="fuzhuang2data" style="display: none;"></span>
+            </div>
+        </a>
+
+
+
+
+        <!--日用品-->
+
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                <a id="riyongpin"></a>
+                <span>日用品</span>
+            </div>
+        </div>
+
+        <!--单个盒子-->
+        <a class="box" data-toggle="modal" data-target="#myBuyModal">
+            <!--图片盒子-->
+            <div class="pic">
+                <img src="" id="riyongpint1"/>
+            </div>
+            <div class="details">
+                <span class="description" id="riyongpind1"></span>
+                <span class="price"><i style="font-size: 12px">￥</i><span id="riyongpinp1"></span></span><span class="moreDetail">...</span>
+                <span id="riyongpin1data" style="display: none;"></span>
+            </div>
+        </a>
+
+        <!--单个盒子-->
+        <a class="box" data-toggle="modal" data-target="#myBuyModal">
+            <!--图片盒子-->
+            <div class="pic">
+                <img src="" id="riyongpint2"/>
+            </div>
+            <div class="details">
+                <span class="description" id="riyongpind2"></span>
+                <span class="price"><i style="font-size: 12px">￥</i><span id="riyongpinp2"></span></span><span class="moreDetail">...</span>
+                <span id="riyongpin2data" style="display: none;"></span>
+            </div>
+        </a>
+
+
+
+        <!--化妆品-->
+
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                <a id="huazhuangpin"></a>
+                <span>化妆品</span>
+            </div>
+        </div>
+
+        <!--单个盒子-->
+        <a class="box" data-toggle="modal" data-target="#myBuyModal">
+            <!--图片盒子-->
+            <div class="pic">
+                <img src="" id="huazhuangpint1"/>
+            </div>
+            <div class="details">
+                <span class="description" id="huazhuangpind1"></span>
+                <span class="price"><i style="font-size: 12px">￥</i><span id="huazhuangpinp1"></span></span><span class="moreDetail">...</span>
+                <span id="huazhuangpin1data" style="display: none;"></span>
+            </div>
+        </a>
+
+        <!--单个盒子-->
+        <a class="box" data-toggle="modal" data-target="#myBuyModal">
+            <!--图片盒子-->
+            <div class="pic">
+                <img src="" id="huazhuangpint2"/>
+            </div>
+            <div class="details">
+                <span class="description" id="huazhuangpind2"></span>
+                <span class="price"><i style="font-size: 12px">￥</i><span id="huazhuangpinp2"></span></span><span class="moreDetail">...</span>
+                <span id="huazhuangpin2data" style="display: none;"></span>
+            </div>
+        </a>
+
+
+
+
+        <!--食品-->
+
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                <a id="shipin"></a>
+                <span>食品</span>
+            </div>
+        </div>
+
+        <!--单个盒子-->
+        <a class="box" data-toggle="modal" data-target="#myBuyModal">
+            <!--图片盒子-->
+            <div class="pic">
+                <img src="" id="shipint1"/>
+            </div>
+            <div class="details">
+                <span class="description" id="shipind1"></span>
+                <span class="price"><i style="font-size: 12px">￥</i><span id="shipinp1"></span></span><span class="moreDetail">...</span>
+                <span id="shipin1data" style="display: none;"></span>
+            </div>
+        </a>
+
+        <!--单个盒子-->
+        <a class="box" data-toggle="modal" data-target="#myBuyModal">
+            <!--图片盒子-->
+            <div class="pic">
+                <img src="" id="shipint2"/>
+            </div>
+            <div class="details">
+                <span class="description" id="shipind2"></span>
+                <span class="price"><i style="font-size: 12px">￥</i><span id="shipinp2"></span></span><span class="moreDetail">...</span>
+                <span id="shipin2data" style="display: none;"></span>
+            </div>
+        </a>
+
+
+
+
+        <!--家电-->
+
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                <a id="jiadian"></a>
+                <span>家电</span>
+            </div>
+        </div>
+
+        <!--单个盒子-->
+        <a class="box" data-toggle="modal" data-target="#myBuyModal">
+            <!--图片盒子-->
+            <div class="pic">
+                <img src="" id="jiadiant1"/>
+            </div>
+            <div class="details">
+                <span class="description" id="jiadiand1"></span>
+                <span class="price"><i style="font-size: 12px">￥</i><span id="jiadianp1"></span></span><span class="moreDetail">...</span>
+                <span id="jiadian1data" style="display: none;"></span>
+            </div>
+        </a>
+
+        <!--单个盒子-->
+        <a class="box" data-toggle="modal" data-target="#myBuyModal">
+            <!--图片盒子-->
+            <div class="pic">
+                <img src="" id="jiadiant2"/>
+            </div>
+            <div class="details">
+                <span class="description" id="jiadiand2"></span>
+                <span class="price"><i style="font-size: 12px">￥</i><span id="jiadianp2"></span></span><span class="moreDetail">...</span>
+                <span id="jiadian2data" style="display: none;"></span>
+            </div>
+        </a>
+
+
+
+
+        <!--电子产品-->
+
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                <a id="dianzi"></a>
+                <span>电子产品</span>
+            </div>
+        </div>
+
+        <!--单个盒子-->
+        <a class="box" data-toggle="modal" data-target="#myBuyModal">
+            <!--图片盒子-->
+            <div class="pic">
+                <img src="" id="dianzit1"/>
+            </div>
+            <div class="details">
+                <span class="description" id="dianzid1"></span>
+                <span class="price"><i style="font-size: 12px">￥</i><span id="dianzip1"></span></span><span class="moreDetail">...</span>
+                <span id="dianzi1data" style="display: none;"></span>
+            </div>
+        </a>
+
+        <!--单个盒子-->
+        <a class="box" data-toggle="modal" data-target="#myBuyModal">
+            <!--图片盒子-->
+            <div class="pic">
+                <img src="" id="dianzit2"/>
+            </div>
+            <div class="details">
+                <span class="description" id="dianzid2"></span>
+                <span class="price"><i style="font-size: 12px">￥</i><span id="dianzip2"></span></span><span class="moreDetail">...</span>
+                <span id="dianzi2data" style="display: none;"></span>
+            </div>
+        </a>
+
+
+
+        <!--医用品-->
+
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                <a id="yiyongpin"></a>
+                <span>医用品</span>
+            </div>
+        </div>
+
+        <!--单个盒子-->
+        <a class="box" data-toggle="modal" data-target="#myBuyModal">
+            <!--图片盒子-->
+            <div class="pic">
+                <img src="" id="yiyongpint1"/>
+            </div>
+            <div class="details">
+                <span class="description" id="yiyongpind1"></span>
+                <span class="price"><i style="font-size: 12px">￥</i><span id="yiyongpinp1"></span></span><span class="moreDetail">...</span>
+                <span id="yiyongpin1data" style="display: none;"></span>
+            </div>
+        </a>
+
+        <!--单个盒子-->
+        <a class="box" data-toggle="modal" data-target="#myBuyModal">
+            <!--图片盒子-->
+            <div class="pic">
+                <img src="" id="yiyongpint2"/>
+            </div>
+            <div class="details">
+                <span class="description" id="yiyongpind2"></span>
+                <span class="price"><i style="font-size: 12px">￥</i><span id="yiyongpinp2"></span></span><span class="moreDetail">...</span>
+                <span id="yiyongpin2data" style="display: none;"></span>
+            </div>
+        </a>
+
+
+        <!--书籍-->
+
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                <a id="shuji"></a>
+                <span>书籍</span>
+            </div>
+        </div>
+
+        <!--单个盒子-->
+        <a class="box" data-toggle="modal" data-target="#myBuyModal">
+            <!--图片盒子-->
+            <div class="pic">
+                <img src="" id="shujit1"/>
+            </div>
+            <div class="details">
+                <span class="description" id="shujid1"></span>
+                <span class="price"><i style="font-size: 12px">￥</i><span id="shujip1"></span></span><span class="moreDetail">...</span>
+                <span id="shuji1data" style="display: none;"></span>
+            </div>
+        </a>
+
+        <!--单个盒子-->
+        <a class="box" data-toggle="modal" data-target="#myBuyModal">
+            <!--图片盒子-->
+            <div class="pic">
+                <img src="" id="shujit2"/>
+            </div>
+            <div class="details">
+                <span class="description" id="shujid2"></span>
+                <span class="price"><i style="font-size: 12px">￥</i><span id="shujip2"></span></span><span class="moreDetail">...</span>
+                <span id="shuji2data" style="display: none;"></span>
+            </div>
+        </a>
+
+
+
+
+
+        <!--文具-->
+
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                <a id="wenju"></a>
+                <span>文具</span>
+            </div>
+        </div>
+
+        <!--单个盒子-->
+        <a class="box" data-toggle="modal" data-target="#myBuyModal">
+            <!--图片盒子-->
+            <div class="pic">
+                <img src="" id="wenjut1"/>
+            </div>
+            <div class="details">
+                <span class="description" id="wenjud1"></span>
+                <span class="price"><i style="font-size: 12px">￥</i><span id="wenjup1"></span></span><span class="moreDetail">...</span>
+                <span id="wenju1data" style="display: none;"></span>
+            </div>
+        </a>
+
+        <!--单个盒子-->
+        <a class="box" data-toggle="modal" data-target="#myBuyModal">
+            <!--图片盒子-->
+            <div class="pic">
+                <img src="" id="wenjut2"/>
+            </div>
+            <div class="details">
+                <span class="description" id="wenjud2"></span>
+                <span class="price"><i style="font-size: 12px">￥</i><span id="wenjup2"></span></span><span class="moreDetail">...</span>
+                <span id="wenju2data" style="display: none;"></span>
+            </div>
+        </a>
+    </div>
+	<!--The EndLine of the GoodList-->
+	<!--The StartLine of the Cart-->
+	<div class="cart">
+		<div class="cart_child"><a href="/"><i class="iconfont icon-shouye-xianxing"></i><p>首页</p></a></div>
+		<div class="cart_child"><a href="/search"><i class="iconfont icon-sousuo-xianxing"></i><p>搜索</p></a></div>
+		<div class="cart_child"><a href="/cart"><i class="iconfont icon-caigou-xianxing"></i><p>购物车</p></a></div>
+		<div class="cart_child"><a href="/user"><i class="iconfont icon-yonghu-xianxing"></i><p>用户</p></a></div>
+	</div>
+	<!--The EndLine of the Cart-->
+
+
+
+
+    <!--The StartLine of the Buy modal-->
+    <div class="modal fade" id="myBuyModal" tabindex="-1" role="dialog" aria-labelledby="myBuyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="clean">&times;</button>
+                    <h4 class="modal-title" id="myBuyModalLabel">商品详情</h4>
+                </div>
+                <div class="modal-body">
+                    <!--这里填补的是购买的弹框-->
+                    <div class="detail-pic">
+                        <img src="" id="picture"/>
+                    </div>
+                    <div class="detial-goodName">
+                        <span id="goodN"></span><i style="font-size: 12px">￥</i><span id="detail-price"></span>
+                    </div>
+                    <div class="detial-description">
+                        <p id="desc"></p>
+                        <p id="score"></p>
+                    </div>
+                    <div class="detail-repertory">
+                        <span>店铺:</span><span id="sName">none</span><span>库存</span><span id="reper">none</span>
+                    </div>
+                    <div class="detail-buy">
+                        <button type="button" class="btn" id="decrease">-</button>
+                        <input type="text" id="detail-but-input" placeholder="1" value="1"/>
+                        <button type="button" class="btn" id="increase">+</button>
+                    </div>
+                    <div class="detail-btn-group">
+                        <div class="detail-storeName" id="saveGood"><i class="iconfont icon-xihuan" id="goodicon"></i><span>收藏商品</span></div>
+                        <div class="detail-save" id="saveStore"><i class="iconfont icon-shoucang" id="storeicon"></i><span>关注店铺</span></div>
+                        <div class="detail-buy-OK"><a id="addCart">添加至购物车</a></div>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <!--The EndLine of the Buy modal-->
+
+
+    <!--The StartLine of the SideBar-->
+    <div class="side-bar">
+        <ul>
+            <li><a href="#tuijian" class="scroll">推荐</a></li>
+            <li><a href="#fuzhuang" class="scroll">服装</a></li>
+            <li><a href="#riyongpin" class="scroll">日用品</a></li>
+            <li><a href="#huazhuangpin" class="scroll">化妆品</a></li>
+            <li><a href="#shipin" class="scroll">食品</a></li>
+            <li><a href="#jiadian" class="scroll">家电</a></li>
+            <li><a href="#dianzi" class="scroll">电子产品</a></li>
+            <li><a href="#yiyongpin" class="scroll">医用品</a></li>
+            <li><a href="#shuji" class="scroll">书籍</a></li>
+            <li><a href="#wenju" class="scroll">文具</a></li>
+        </ul>
+        <i id="side"></i>
+    </div>
+    <!--The EndLine of the SideBar-->
+
+
+
+    <!--未登录时显示-->
+    <div class="tip">
+        未登录，请登录后再操作！
+    </div>
+</body>
+<script src="/public/js/jquery-3.3.1.min.js"></script>
+<script src="/public/js/bootstrap.min.js"></script>
+<script src="/public/js/home-jq.js"></script>
+<script type="text/javascript" src="/public/js/home.js"></script>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>买卖铺子-做自己的买卖</title>
+	<link rel="shortcut icon" href="/public/img/favicon.ico"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/public/css/set.css">
+	<link rel="stylesheet" type="text/css" href="/public/css/iconfont.css">
+</head>
+<body>
+	<!--The StartLine of set title-->
+	<div class="set-title">
+		<a href="/user"><i class="iconfont icon-shangyiyehoutuifanhui"></i></a><h1>设置</h1><i class="iconfont icon-shezhi set-icon"></i>
+	</div>
+	<!--The EndLine of set title-->
+	<!--The StartLine of set content-->
+	<div class="content">
+		<table>
+			<tr>
+				<td>头像</td>
+				<td><span class="set-picture"></span></td>
+			</tr>
+			<tr>
+				<td>昵称</td>
+				<td id="_username"></td>
+			</tr>
+			<tr>
+				<td>真实姓名</td>
+				<td id="_realname"></td>
+			</tr>
+			<tr>
+				<td>性别</td>
+				<td id="_sex"></td>
+			</tr>
+			<tr>
+				<td>联系方式</td>
+				<td id="_mobilephone"></td>
+			</tr>
+			<tr>
+				<td>我的收货地址</td>
+				<td id="_address"></td>
+			</tr>
+		</table>
+		<div class="set-button">
+			<button type="button" class="btn set-btn" id="setInformation">修改信息</button>
+		</div>
+	</div>
+	<div class="set-content">
+		<table>
+			<tr>
+				<td>头像</td>
+				<td>
+					<form method='post', action='/user/set/data', enctype='multipart/form-data'>
+						<div class="input-group">
+							<input type="file" name="inputFile" class="form-control" id="pic">
+						</div><!-- /input-group -->
+					</form>
+					<input type="text" style="display: none;" id="pics"/>
+				</td>
+			</tr>
+			<tr>
+				<td>昵称</td>
+				<td>
+					<div class="input-group">
+						<input type="text" placeholder="请输入昵称" class="form-control" id="username"/>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>真实姓名</td>
+				<td>
+					<div class="form-group">
+						<input type="text" placeholder="请输入真实姓名" class="form-control" id="realname"/>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>性别</td>
+				<td>
+					<div class="form-group">
+						<select class="form-control" id="sex">
+							<option value="男">男</option>
+							<option value="女">女</option>
+							<option value="未知">未知</option>
+						</select>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>联系方式</td>
+				<td>
+					<div class="form-group">
+						<input type="text" placeholder="请输入联系方式" class="form-control" id="mobilephone"/>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>我的收货地址</td>
+				<td>
+					<div class="form-group">
+						<input type="text" placeholder="请输入收货地址" class="form-control" id="address" />
+					</div>
+				</td>
+			</tr>
+		</table>
+
+	    <div class="input-group">
+	      <button class="btn btn-default set-btn" data-toggle="modal" data-target="#mySetModal"  id="setOK">确认修改</button>
+	    </div>
+	</div>
+	<!--The EndLine of set content-->
+	<!--The StartLine of set OK-->
+	<div class="modal fade" id="mySetModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel"></h4>
+				</div>
+				<div class="modal-body" id="Set-text"></div>
+				<div class="modal-footer">
+					<a type="button" href="javascript:;" class="btn btn-default" id="Set_close">关闭</a>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal -->
+	</div>
+	<!--The EndLine of set OK-->
+</body>
+<script src="/public/js/jquery-3.3.1.min.js"></script>
+<script src="/public/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/public/js/set.js"></script>
+</html>

@@ -1,0 +1,79 @@
+	{% block css %}
+	<link rel="stylesheet" type="text/css" href="/public/css/manager-add.css">
+	{% endblock %}
+	{% extends 'layout.html' %}
+	{% block main %}
+	<!--The StartLine of the data result-->
+	<div class="add-data">
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="商店名称" id="storeName">
+			<span class="input-group-addon" id="basic-addon2">*</span>
+		</div>
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="商店经营许可号" id="storeNum">
+			<span class="input-group-addon" id="basic-addon2">*</span>
+		</div>
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="商品名称" id="goodName">
+			<span class="input-group-addon" id="basic-addon2">*</span>
+		</div>
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="商品ID" id="goodID">
+			<span class="input-group-addon" id="basic-addon2">*</span>
+		</div>
+		<div class="input-group">
+			<select class="form-control" id="goodSort">
+				<option value="商品类别">商品类别</option>
+				<option value="服装">服装</option>
+				<option value="日用品">日用品</option>
+				<option value="化妆品">化妆品</option>
+				<option value="食品">食品</option>
+				<option value="家电">家电</option>
+				<option value="电子产品">电子产品</option>
+				<option value="医用品">医用品</option>
+				<option value="书籍">书籍</option>
+				<option value="文具">文具</option>
+			</select>
+			<span class="input-group-addon" id="basic-addon2">*</span>
+		</div>
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="价格" id="price">
+			<span class="input-group-addon" id="basic-addon2">*</span>
+		</div>
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="描述" id="description">
+		</div>
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="库存" id="repertory">
+			<span class="input-group-addon" id="basic-addon2">*</span>
+		</div>
+		<div class="input-group">
+			<input type="file" name="inputPic" class="form-control" id="goodpic">
+			<span class="input-group-addon" id="basic-addon2">*</span>
+		</div>
+		<div class="input-group">
+			<button class="btn btn-default add-btn" data-toggle="modal" data-target="#myaddModal" id="saveGood">保存</button>
+		</div>
+	</div>
+	<!--The EndLine of the data result-->
+	<!--The StartLine of add OK-->
+	<div class="modal fade" id="myaddModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabeladd" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabeladd"></h4>
+				</div>
+				<div class="modal-body" id="successText"></div>
+				<div class="modal-footer">
+					<a type="button" class="btn btn-default" id="addClose">关闭</a>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal -->
+	</div>
+	<!--The EndLine of add OK-->
+	{% endblock %}
+
+	{% block js %}
+	<script src="/public/js/manager.js"></script>
+	{% endblock %}

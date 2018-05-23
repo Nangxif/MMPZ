@@ -1,0 +1,113 @@
+@media screen and (max-width: 375px) {
+    html,body{
+        width: 100%;
+        height: 100%;
+        background-color: #f7f7f7;
+    }
+    .saveg-title{
+        display: flex;
+        width: 100%;
+        height: 50px;
+        -moz-box-shadow:0px 2px 3px #BFBFBF;
+        -webkit-box-shadow:0px 2px 3px #BFBFBF;
+        box-shadow:0px 2px 3px #BFBFBF;
+        background-color: #f9f9f9;
+    }
+    .saveg-title a{
+        display: block;
+        height: 100%;
+        flex: 1;
+        text-decoration: none;
+    }
+    .saveg-title a:hover{
+        background-color: #e6e3e3;
+    }
+    .saveg-title i:nth-child(1){
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        line-height:50px;
+        font-size: 20px;
+        text-align: center;
+    }
+    .saveg-title h1{
+        margin:0;
+        padding:0px;
+        display: inline-block;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        flex: 8;
+        font-size: 20px;
+        font-weight:600;
+    }
+    .saveg-icon{
+        display: block;
+        height: 100%;
+        flex: 1;
+        line-height:50px;
+        font-size: 20px !important;
+        text-align: center;
+    }
+
+
+
+
+
+    .saveg-content{
+        width: 100%;
+        height: 567px;
+    }
+
+
+
+
+    table{
+        margin: 0 auto;
+        margin-top: 10px;
+        width: 100%;
+    }
+    table tr{
+        height: 100px;
+        text-align: center;
+        border-bottom: 1px solid white;
+    }
+    table tr p{
+        height: 33px;
+        margin: 0px;
+        padding-left: 10px;
+        line-height: 33px;
+        text-align: left;
+    }
+    .check{
+        width: 30px;
+    }
+    .imgclas{
+        width:100px;
+    }
+    table img{
+        width: 100px;
+        height: 100px;
+    }
+    .num{
+        width: 50px;
+    }
+    .dele{
+        width: 80px;
+        height: 100px;
+    }
+    .dele a{
+        display: block;
+        background-color: #D0040A;
+        color: white;
+        line-height: 100px;
+        text-align: center;
+    }
+    .dele a:hover{
+        background-color: rgb(247, 30, 37);
+        text-decoration: none;
+    }
+
+
+
+}

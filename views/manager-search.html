@@ -1,0 +1,142 @@
+{% block css %}
+	<link rel="stylesheet" type="text/css" href="/public/css/manager-search.css">
+	<link rel="stylesheet" type="text/css" href="/public/css/manager-change.css">
+{% endblock %}
+{% extends 'layout.html' %}
+{% block main %}
+<!--The StartLine of the search input-->
+<div class="search-data">
+	<div class="input-group">
+		<input type="text" class="form-control" placeholder="请输入商店名、商品名、商品类别搜索" id="searchText">
+	</div>
+	<div class="input-group">
+		<button class="btn btn-default search-btn" id="searchGood">查询</button>
+	</div>
+</div>
+<!--The EndLine of the search input-->
+
+<!--The StartLine of the data result-->
+<div class="search-result">
+	<table class="table" id="goodTable">
+		<tr>
+			<th>店名</th>
+			<th>商品</th>
+			<th>商品ID</th>
+			<th>类别</th>
+			<th>修改/删除</th>
+		</tr>
+		<tr>
+			<td colspan="5" style="color: #555; text-align: center;">查询不到数据</td>
+		</tr>
+	</table>
+</div>
+<!--The EndLine of the data result-->
+<!--The startLine of the page-->
+<div class="page">
+	<nav aria-label="...">
+		<ul class="pager">
+			<li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> 上一页</a></li>
+			<li class="next"><a href="#">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+		</ul>
+	</nav>
+</div>
+<!--The endLine of  the page-->
+<!--The StartLine of the changeModel-->
+<div class="modal fade" id="changeModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabelchange" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="ModalLabelchange">修改数据</h4>
+			</div>
+			<div class="modal-body">
+
+
+				<!--这里把原先独立出来的修改数据页面合并起来，因为发现要传递修改的那条数据的id有些困难，刷新页面之后暂时保存起来的变量都全部清零了-->
+				<!--The StartLine of the data result-->
+				<div class="change-data">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="商店名称" disabled="disabled" id="changeStoreName">
+						<span class="input-group-addon" id="basic-addon2">*</span>
+					</div>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="商店经营许可号" disabled="disabled" id="changeStoreNum">
+						<span class="input-group-addon" id="basic-addon2">*</span>
+					</div>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="商品名称" id="changeGoodName">
+						<span class="input-group-addon" id="basic-addon2">*</span>
+					</div>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="商品ID" id="changeGoodID">
+						<span class="input-group-addon" id="basic-addon2">*</span>
+					</div>
+					<div class="input-group">
+						<select class="form-control" id="changeGoodSort">
+							<option value="商品类别">商品类别</option>
+							<option value="服装">服装</option>
+							<option value="日用品">日用品</option>
+							<option value="化妆品">化妆品</option>
+							<option value="食品">食品</option>
+							<option value="家电">家电</option>
+							<option value="电子产品">电子产品</option>
+							<option value="医用品">医用品</option>
+							<option value="书籍">书籍</option>
+							<option value="文具">文具</option>
+						</select>
+						<span class="input-group-addon" id="basic-addon2">*</span>
+					</div>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="价格" id="changePrice">
+						<span class="input-group-addon" id="basic-addon2">*</span>
+					</div>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="描述" id="changeDescription">
+					</div>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="库存" id="changeRepertory">
+						<span class="input-group-addon" id="basic-addon2">*</span>
+					</div>
+					<div class="input-group">
+						<input type="file" name="inputPic" class="form-control" id="changeGoodpic">
+						<input type="text" style="display: none;" id="changePics"/>
+						<span class="input-group-addon" id="basic-addon2">*</span>
+					</div>
+					<div class="input-group">
+						<button class="btn btn-default change-btn" data-toggle="modal" data-target="#mychangeModal" id="change">修改</button>
+					</div>
+				</div>
+				<!--The EndLine of the data result-->
+				<!--The StartLine of change OK-->
+				<div class="modal fade" id="mychangeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabelchange" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								<h4 class="modal-title" id="myModalLabelchange"></h4>
+							</div>
+							<div class="modal-body" id="changeText"></div>
+							<div class="modal-footer">
+								<a type="button" class="btn btn-default" id="changeClose">关闭</a>
+							</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal -->
+				</div>
+				<!--The EndLine of change OK-->
+
+
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+<!--The EndLine of the changeModel-->
+{% endblock %}
+{% block js %}
+<script src="/public/js/manager.js"></script>
+{% endblock %}
+
+

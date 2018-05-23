@@ -1,0 +1,55 @@
+{% block css %}
+<link rel="stylesheet" type="text/css" href="/public/css/manager-self.css">
+{% endblock %}
+{% extends 'layout.html' %}
+{% block main %}
+<!--The StartLine of the search input-->
+<div class="search-data">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="请输入用户名搜索" id="searchText">
+    </div>
+    <div class="input-group">
+        <button class="btn btn-default search-btn" id="searchSelf">查询</button>
+    </div>
+</div>
+<!--The EndLine of the search input-->
+
+<!--The StartLine of the data result-->
+<div class="search-result">
+    <table class="table" id="selfTable">
+        <tr>
+            <th>用户名</th>
+            <th>删除</th>
+        </tr>
+        <tr>
+            <td colspan="2" style="color: #555; text-align: center;">查询不到数据</td>
+        </tr>
+    </table>
+</div>
+<!--The EndLine of the data result-->
+<!--The StartLine of the changeModel-->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabeldelete" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="ModalLabelchange">是否删除用户</h4>
+            </div>
+            <div class="modal-body">
+                是否删除该用户？？？
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="sure">确定</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!--The EndLine of the changeModel-->
+
+<!--删除成功时显示-->
+<div class="tip">
+</div>
+{% endblock %}
+{% block js %}
+<script src="/public/js/manager-self.js"></script>
+{% endblock %}

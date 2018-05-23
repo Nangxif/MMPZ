@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>买卖铺子-做自己的买卖</title>
+    <link rel="shortcut icon" href="/public/img/favicon.ico"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/searchResult.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/iconfont.css">
+</head>
+<body>
+<!--The StartLine of search title-->
+<div class="search-title">
+    <a href="/search"><i class="iconfont icon-shangyiyehoutuifanhui"></i></a><h1>查询结果</h1><i class="iconfont icon-sousuo-xianxing search-icon"></i>
+</div>
+<!--The EndLine of search title-->
+<div class="container">
+
+</div>
+<!--The StartLine of the Buy modal-->
+<div class="modal fade" id="myBuyModal" tabindex="-1" role="dialog" aria-labelledby="myBuyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="clean">&times;</button>
+                <h4 class="modal-title" id="myBuyModalLabel">商品详情</h4>
+            </div>
+            <div class="modal-body">
+                <!--这里填补的是购买的弹框-->
+                <div class="detail-pic">
+                    <img src="" id="picture"/>
+                </div>
+                <div class="detial-goodName">
+                    <span id="goodN"></span><i style="font-size: 12px">￥</i><span id="detail-price"></span>
+                </div>
+                <div class="detial-description">
+                    <p id="desc"></p>
+                    <p id="score"></p>
+                </div>
+                <div class="detail-price">
+
+                </div>
+                <div class="detail-repertory">
+                    <span>店铺:</span><span id="sName">none</span><span>库存</span><span id="reper">none</span>
+                </div>
+                <div class="detail-buy">
+                    <button type="button" class="btn" id="decrease">-</button>
+                    <input type="text" id="detail-but-input" placeholder="1" value="1"/>
+                    <button type="button" class="btn" id="increase">+</button>
+                </div>
+                <div class="detail-btn-group">
+                    <div class="detail-storeName"><a id="saveGood"><i class="iconfont icon-xihuan" id="goodicon"></i><span>收藏商品</span></a></div>
+                    <div class="detail-save"><a id="saveStore"><i class="iconfont icon-shoucang" id="storeicon"></i><span>关注店铺</span></a></div>
+                    <div class="detail-buy-OK"><a id="addCart">添加至购物车</a></div>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!--The EndLine of the Buy modal-->
+
+
+
+<!--未登录时显示-->
+<div class="tip">
+    未登录，请登录后再操作！
+</div>
+</body>
+<script src="/public/js/jquery-3.3.1.min.js"></script>
+<script src="/public/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/public/js/searchResult.js"></script>
+</html>

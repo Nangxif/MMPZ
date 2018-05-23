@@ -1,0 +1,31 @@
+$(function(){
+    $("#login").on('click',function(){
+        $.ajax({
+            type:'post',
+            url:'/api/user/login',
+            data:{
+                username:$("#username").val(),
+                password:$("#password").val()
+            },
+            dataType:'json',
+            success:function(result){
+                //如果登录成功，那么跳转页面至用户页面
+                if(result.code==0){
+                    //如果是管理员的话
+                    if(result.userInfo.isAdmin){
+                        $('#Login-text').html("你好管理员");
+                        $("#login_close").removeAttr("data-dismiss");
+                        $("#login_close").attr("href","/manager/search");
+                    }else{//如果不是管理员的话
+                        $('#Login-text').html(result.userInfo.username+result.message+"，欢迎使用买卖铺子");
+                        $("#login_close").removeAttr("data-dismiss");
+                        $("#login_close").attr("href","/user");
+                    }
+                }else{//如果登录失败，则关闭弹框
+                    $('#Login-text').html(result.message);
+                    $("#login_close").attr("data-dismiss","modal");
+                }
+            }
+        });
+    });
+})

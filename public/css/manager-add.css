@@ -1,0 +1,140 @@
+html,body{
+    width: 100%;
+    background-color: #f7f7f7;
+}
+div p{
+    margin: 0px;
+    padding: 0px;
+}
+a{
+    display: block;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 375px) {
+    .manager-wrapper{
+        display: flex;
+        width: 100%;
+        height: 120px;
+        background-color: #d0040a;
+    }
+    .forword{
+        width: 100%;
+        height: 30px;
+        background: #d0040a;
+    }
+    .forword a{
+        display: block;
+        width: 30px;
+        height: 30px;
+        color: white;
+        text-decoration: none;
+        color: white;
+    }
+    .forword a:hover{
+        background-color: #b41e23;
+    }
+    .forword a i{
+        display: block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        color: white;
+    }
+
+    .pic{
+        flex: 0 0 100px;
+    }
+    .picture{
+        display: block;
+        margin: 0 auto;
+        margin-top:10px;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border:white solid 2px;
+        background-image: url('https://storage.jd.com/i.imageUpload/66796bead9cef43535323031343638343630343139333939_mid.jpg');
+        background-size: cover;
+        background-repeat: none;
+    }
+    .managername{
+        flex: 1;
+        padding-left:10px;
+        line-height: 120px;
+        text-align: left;
+        font-size: 18px;
+        color: white;
+    }
+
+
+    .manager-choise{
+        display: flex;
+        width: 100%;
+        height: 30px;
+        background:white;
+        color: #777777;
+        text-align: center;
+    }
+    .manager-choise a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        line-height: 30px;
+        text-align: center;
+        text-decoration: none;
+        color: #777777;
+    }
+    .manager-choise a:visited{
+        background-color: #dac9c977;
+    }
+    .manager-choise a:active{
+        background-color: #dac9c977;
+    }
+    .manager-choise .search{
+        flex:1;
+        height: 100%; 
+        line-height: 30px;
+    }
+    .manager-choise .add{
+        flex:1;
+        height: 100%; 
+        line-height: 30px;
+    }
+
+    .manager-choise .change{
+        flex: 1;
+        height: 100%;
+        line-height: 30px;
+    }
+
+
+    .add-data{
+        margin: 0 auto;
+        margin-top:20px;
+        width: 80%;
+    }
+    .add-data .input-group{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .input-group-addon{
+        background-color: #d0040a !important;
+        color: white !important;
+        border-color: #d0040a;
+    }
+
+    .add-btn{
+        width: 100%;
+        background-color: #d0040a;
+        color: white;
+        font-weight: 600;
+    }
+
+}
+
+
+    		

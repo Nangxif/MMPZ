@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>买卖铺子-做自己的买卖</title>
+	<link rel="shortcut icon" href="/public/img/favicon.ico"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/public/css/login.css">
+	<link rel="stylesheet" type="text/css" href="/public/css/iconfont.css">
+</head>
+<body>
+	<!--The StartLine of login title-->
+	<div class="login-title">
+		<a href="/"><i class="iconfont icon-shangyiyehoutuifanhui"></i></a><h1>登录</h1>
+	</div>
+	<!--The EndLine of login title-->
+	<!--The StartLine of login content-->
+	<div class="content">
+		<div class="input-group">
+			<input type="text" class="form-control" aria-label="..." placeholder="请输入昵称" name="username" id="username">
+		</div>
+
+	   
+	    <div class="input-group">
+	      <input type="password" class="form-control" aria-label="..." placeholder="请输入密码" name="password" id="password">
+	    </div>
+
+	    <div class="input-group">
+	      <button class="btn btn-default login-btn" data-toggle="modal" data-target="#myModal" id="login">登录</button>
+	    </div>
+	</div>
+	<!--The EndLine of login content-->
+	<!--The StartLine of login OK-->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	                <h4 class="modal-title" id="myModalLabel"></h4>
+	            </div>
+	            <div class="modal-body" id="Login-text"></div>
+	            <div class="modal-footer">
+	                <a type="button" class="btn btn-default" href="javascript:;" id="login_close">关闭</a>
+	            </div>
+	        </div><!-- /.modal-content -->
+	    </div><!-- /.modal -->
+	</div>
+	<!--The EndLine of login OK-->
+</body>
+<script src="/public/js/jquery-3.3.1.min.js"></script>
+<script src="/public/js/bootstrap.min.js"></script>
+<script src="/public/js/DES.js"></script>
+<script src="/public/js/login.js"></script>
+</html>

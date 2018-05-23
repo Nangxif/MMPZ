@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>买卖铺子-做自己的买卖</title>
+    <link rel="shortcut icon" href="/public/img/favicon.ico"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/pay.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/iconfont.css">
+</head>
+<body>
+<!--The StartLine of pay title-->
+<div class="pay-title">
+    <a href="/user"><i class="iconfont icon-shangyiyehoutuifanhui"></i></a><h1>已支付</h1><i class="iconfont icon-yinhangqia pay-icon"></i>
+</div>
+<!--The EndLine of pay title-->
+<!--The StartLine of the pay content-->
+<div class="pay-content">
+
+</div>
+<!--The EndLine of the pay content-->
+<!--The StartLine of the changeModel-->
+<div class="modal fade" id="scoreModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabelchange" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="ModalLabelchange">评分</h4>
+            </div>
+            <div class="modal-body">
+                <select class="form-control" id="selectscore">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="ssure">确定</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+
+<!--评分成功时显示-->
+<div class="tip">
+    已成功评分！
+</div>
+</body>
+<script src="/public/js/jquery-3.3.1.min.js"></script>
+<script src="/public/js/bootstrap.min.js"></script>
+<script src="/public/js/pay.js"></script>
+</html>

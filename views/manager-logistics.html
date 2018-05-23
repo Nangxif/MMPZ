@@ -1,0 +1,66 @@
+{% block css %}
+<link rel="stylesheet" type="text/css" href="/public/css/manager-logistics.css">
+{% endblock %}
+{% extends 'layout.html' %}
+{% block main %}
+<!--The StartLine of the search input-->
+<div class="search-data">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="请输入用户名搜索" id="searchText">
+    </div>
+    <div class="input-group">
+        <button class="btn btn-default search-btn" id="searchGood">查询</button>
+    </div>
+</div>
+<!--The EndLine of the search input-->
+
+<!--The StartLine of the data result-->
+<div class="search-result">
+    <table class="table" id="logisticsTable">
+        <tr>
+            <th>店名</th>
+            <th>商品</th>
+            <th>物流</th>
+            <th>修改物流</th>
+        </tr>
+    </table>
+</div>
+<!--The EndLine of the data result-->
+<!--The StartLine of the changeModel-->
+<div class="modal fade" id="changeModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabelchange" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="ModalLabelchange">修改数据</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">目前物流状态：<span id="status"></span></div>
+                </div>
+                <select class="form-control" id="select">
+                    <option value="已下单">已下单</option>
+                    <option value="正在处理">正在处理</option>
+                    <option value="已发货">已发货</option>
+                    <option value="运送途中">运送途中</option>
+                    <option value="未签收">未签收</option>
+                    <option value="已签收">已签收</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="lsure">确定</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!--The EndLine of the changeModel-->
+
+
+
+<!--更新成功时显示-->
+<div class="tip">
+</div>
+{% endblock %}
+{% block js %}
+<script src="/public/js/manager-logistics.js"></script>
+{% endblock %}

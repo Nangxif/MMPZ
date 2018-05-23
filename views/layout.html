@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>买卖铺子-做自己的买卖</title>
+    <link rel="shortcut icon" href="/public/img/favicon.ico"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,manager-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
+    {% block css %}
+    {% endblock %}
+    <link rel="stylesheet" type="text/css" href="/public/css/manager-search.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/iconfont.css">
+</head>
+<body>
+<!--The StartLine of the manager title-->
+<div class="forword">
+    <a href="" data-toggle="modal" data-target="#myforwordModal"><i class="iconfont icon-shangyiyehoutuifanhui"></i></a>
+</div>
+<div class="manager-wrapper">
+    <div class="pic">
+        <span class="picture"></span>
+    </div>
+    <div class="managername">{{userInfo.username}}管理员</div>
+</div>
+<!--The EndLine of the manager title-->
+<!--The StartLine of forword OK-->
+<div class="modal fade" id="myforwordModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabelforword" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabelforword"></h4>
+            </div>
+            <div class="modal-body">请问您要注销账户吗？</div>
+            <div class="modal-footer">
+                <a type="button" class="btn btn-default" href="javascript:;" id="logout">注销</a>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!--The EndLine of forword OK-->
+
+<!--The StartLine of the manager-choise title-->
+<div class="manager-choise">
+    <div class="search"><a href="/manager/search">查询数据</a></div>
+    <div class="add"><a href="/manager/add">添加数据</a></div>
+    <div class="logistics"><a href="/manager/logistics">物流管理</a></div>
+    <div class="self"><a href="/manager/self">注销用户</a></div>
+</div>
+<!--The EndLine of the manager-choise title-->
+<div>
+    {% block main %}
+    {% endblock %}
+</div>
+</body>
+<script src="/public/js/jquery-3.3.1.min.js"></script>
+<script src="/public/js/bootstrap.min.js"></script>
+{% block js %}
+{% endblock %}
+</html>

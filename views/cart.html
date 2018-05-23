@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>买卖铺子-做自己的买卖</title>
+	<link rel="shortcut icon" href="/public/img/favicon.ico"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/public/css/cart.css">
+	<link rel="stylesheet" type="text/css" href="/public/css/iconfont.css">
+</head>
+<body>
+	<!--The StartLine of cart title-->
+	<div class="cart-title">
+		<a href="/"><i class="iconfont icon-shangyiyehoutuifanhui"></i></a><h1>购物车(<span id="howmuch">0</span>)</h1><i class="iconfont icon-caigou-xianxing cart-icon"></i>
+	</div>
+	<!--The EndLine of cart title-->
+	<!--The StartLine of the cart content-->
+	<div class="cart-content">
+		<div class="content">
+			<span class="iconfont icon-caigou caigou"></span>
+			<p class="cart-content-font">什么？购物车居然是空的!</p>
+		</div>
+	</div>
+	<!--The EndLine of the cart content-->
+	<!--The StartLine of the total pay-->
+	<div class="total">
+		<div class="choose">
+            <a>清空购物车</a>
+		</div>
+		<div class="totalpay">
+			合计：￥<span class="money">0</span>
+		</div>
+		<div class="pay"  data-toggle="modal">
+			结算
+		</div>
+	</div>
+	<!--The EndLine of the total pay-->
+	<!--The StartLine of the modal-->
+	<div class="modal fade" id="myBuyModal" tabindex="-1" role="dialog" aria-labelledby="myBuyModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myBuyModalLabel">下单</h4>
+				</div>
+				<div class="modal-body" id="buytext">
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" id="Buyyes">确定</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal -->
+	</div>
+	<!--The EndLine of the modal-->
+	<!--未登录时显示-->
+	<div class="tip">
+		未登录，请登录后再操作！
+	</div>
+</body>
+<script src="/public/js/jquery-3.3.1.min.js"></script>
+<script src="/public/js/bootstrap.min.js"></script>
+<script src="/public/js/cart.js"></script>
+</html>

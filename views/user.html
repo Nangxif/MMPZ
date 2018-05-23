@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>买卖铺子-做自己的买卖</title>
+	<link rel="shortcut icon" href="/public/img/favicon.ico"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/public/css/user.css">
+	<link rel="stylesheet" type="text/css" href="/public/css/iconfont.css">
+</head>
+<body>
+    <!--The StartLine of the user title-->
+	<div class="user-wrapper">
+		<div class="pic">
+			<a class="picture" href="javascript:;"></a>
+		</div>
+		{% if userInfo._id %}
+		<div class="username">{{userInfo.username}}</div>
+		{% else %}
+		<div class="username">未登录</div>
+		{% endif %}
+	</div>
+	<!--The EndLine of the user title-->
+
+	<!--The StartLine of the user list-->
+	<div class="user-list">
+		<a class="save">
+			<p class="num" id="savegood">0</p>
+			<p class="name">收藏夹</p>
+		</a>
+		<a class="star">
+			<p class="num" id="savestore">0</p>
+			<p class="name">关注店铺</p>
+		</a>
+	</div>
+	<!--The EndLine of the user list-->
+	
+
+
+
+	<!--The StartLine of the good list-->
+	<div class="good">
+		<div class="all-good">
+			<h1 class="my-good">
+				我的订单
+			</h1>
+
+		</div>
+		<div class="choise">
+			<a class="nopay">
+				<i class="iconfont icon-yinhangqia-xianxing"></i>
+				<p>未支付</p>
+			</a>
+			<a class="pay">
+				<i class="iconfont icon-yinhangqia"></i>
+				<p>已支付</p>
+			</a>
+		</div>
+	</div>
+	<!--The EndLine of the good list-->
+
+
+
+
+	<!--The StartLine of the self information-->
+	<div class="self">
+		<table class="self-table">
+			<tr>
+				<td class="self-title">真实姓名</td>
+				<td id="realname">Aimer</td>
+			</tr>
+			<tr>
+				<td class="self-title">性别</td>
+				<td id="sex">男</td>
+			</tr>
+			<tr id="tel">
+				<td class="self-title">联系方式</td>
+				<td id="mobilephone">15521223592</td>
+			</tr>
+			<tr id="address">
+				<td class="self-title">收货地址</td>
+				<td id="addresstext">广州天河</td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align: center; color: #d0040a;" id="show">显示更多</td>
+			</tr>
+		</table>
+	</div>
+	<!--The EndLine of the self information-->
+
+	<!--The StartLine of the back-->
+	{% if userInfo._id%}
+	<div class="user-back">
+	    <a class="btn btn-default back-btn" id="logout">退出登录</a>
+	</div>
+	{% else %}
+	<div class="user-back">
+		<a class="btn btn-default back-btn" href="/api/login">未登录</a>
+	</div>
+	{% endif %}
+	<!--The EndLine of the back-->
+
+	<!--The StartLine of the Cart-->
+	<div class="cart">
+		<div class="cart_child"><a href="/"><i class="iconfont icon-shouye-xianxing"></i><p>首页</p></a></div>
+		<div class="cart_child"><a href="/search"><i class="iconfont icon-sousuo-xianxing"></i><p>搜索</p></a></div>
+		<div class="cart_child"><a href="/cart"><i class="iconfont icon-caigou-xianxing"></i><p>购物车</p></a></div>
+		<div class="cart_child"><a href="/user"><i class="iconfont icon-yonghu-xianxing"></i><p>用户</p></a></div>
+	</div>
+	<!--The EndLine of the Cart-->
+
+
+
+	<!--未登录时显示-->
+	<div class="tip">
+		未登录，请登录后再操作！
+	</div>
+</body>
+<script src="/public/js/jquery-3.3.1.min.js"></script>
+<script src="/public/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/public/js/user.js"></script>
+</html>
