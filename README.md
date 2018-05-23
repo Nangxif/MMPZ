@@ -14,3 +14,8 @@
   连接成功之后可以查看、修改、删除数据库
   ![连接](https://github.com/Nangxif/MMPZ/blob/master/public/img/table.png)
 ### 四、打开项目，并打开app.js入口文件，右键运行run 'app.js'
+### 五、目录结构
+  目录一
+  ![连接](https://github.com/Nangxif/MMPZ/blob/master/public/img/index_1.png)
+  目录二
+  ![连接](https://github.com/Nangxif/MMPZ/blob/master/public/img/index_2.png)
