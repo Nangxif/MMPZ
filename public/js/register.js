@@ -38,4 +38,23 @@ $(function(){
             $("#register_close").attr("data-dismiss","modal");
         }
     });
+
+    $("#mobilephone").on('input propertychange',function(){
+        if(/^1[3|4|5|7|8][0-9]{9}$/.test($("#mobilephone").val())){
+            $("#mobilephone").css({"box-shadow":""});
+            $("#register").removeAttr("disabled");
+        }else{
+            $("#mobilephone").css({"box-shadow":"0px 0px 11px #d0040a","border-radius":"1px"});
+            $("#register").attr("disabled","disabled");
+        }
+    });
+    $("#username").on("input propertychange",function(){
+        if($("#username").val().length>=2){
+            $("#username").css({"box-shadow":""});
+            $("#register").removeAttr("disabled");
+        }else{
+            $("#username").css({"box-shadow":"0px 0px 11px #d0040a","border-radius":"1px"});
+            $("#register").attr("disabled","disabled");
+        }
+    })
 })

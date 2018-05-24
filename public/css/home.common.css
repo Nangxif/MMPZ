@@ -194,17 +194,20 @@ a{
 }
 .detial-description{
 	width: 353px;
+	padding: 0px 10px 0px 10px;
 }
 .detial-goodName{
 	width: 353px;
+	padding: 0px 10px 0px 10px;
 	color: #d0040a;
 	font-size: 18px;
 }
 .detail-repertory{
 	width: 353px;
+	padding: 0px 10px 0px 10px;
 }
 .detail-buy{
-
+	padding: 0px 10px 0px 10px;
 }
 .detail-btn-group{
 	position: absolute;
