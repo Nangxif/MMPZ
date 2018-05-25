@@ -132,8 +132,8 @@ $(function(){
     //给侧边栏添加动画
     $("#side").attr("class","iconfont icon-xiayiyeqianjinchakangengduo");
     $(".side-bar").css("left","-75px");
-    $(".side-bar").css({"height":"567px","top":"50px"});
-    $(".side-bar i").css({"height":"567px","line-height":"567px"});
+    $(".side-bar").css({"height":(0.93*$(window).height()-50)+"px","top":"50px"});
+    $(".side-bar i").css({"height":(0.93*$(window).height()-50)+"px","line-height":(0.93*$(window).height()-50)+"px"});
     $("#side").on('click',function(){
         if($("#side").attr("class")=="iconfont icon-xiayiyeqianjinchakangengduo"){
             $("#side").attr("class","iconfont icon-shangyiyehoutuifanhui");
@@ -145,13 +145,14 @@ $(function(){
     });
     //侧边栏的显示
     $(window).scroll(function () {
+        console.log($(window).height());
         var scrollTop=$(document).scrollTop();
         if(scrollTop<=50){
-            $(".side-bar").css({"height":"567px","top":"50px"});
-            $(".side-bar i").css({"height":"567px","line-height":"567px"});
+            $(".side-bar").css({"height":(0.93*$(window).height()-50)+"px","top":"50px"});
+            $(".side-bar i").css({"height":(0.93*$(window).height()-50)+"px","line-height":(0.93*$(window).height()-50)+"px"});
         }else{
-            $(".side-bar").css({"height":"617px","top":"0px"});
-            $(".side-bar i").css({"height":"617px","line-height":"617px"});
+            $(".side-bar").css({"height":(0.93*$(window).height())+"px","top":"0px"});
+            $(".side-bar i").css({"height":(0.93*$(window).height())+"px","line-height":(0.93*$(window).height())+"px"});
         }
     });
     //点击锚点之后滚动到相应位置

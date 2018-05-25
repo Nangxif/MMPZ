@@ -1,5 +1,6 @@
 html,body{
     width: 100%;
+    height: 105%;
     background-color: #f7f7f7;
 }
 div p{
@@ -36,224 +37,224 @@ a{
     background-color: #b41e23;
     text-decoration: none;
 }
-@media screen and (max-width: 375px) {
-    .cart_child i{
-    	display: block;
-    	width: 100%;
-    	height: 30px;
-	    line-height: 30px;
-    	font-size: 20px;
-    	color: white;
-    }
-    .cart_child p{
-    	padding:0px;
-    	margin: 0px;
-    	width: 100%;
-    	height: 20px;
-	    line-height: 20px;
-    	font-size: 12px;
-    	color: white;
-    }
-    .user-wrapper{
-        display: flex;
-        width: 100%;
-        height: 150px;
-        background-color: #d0040a;
-    }
-    .pic{
-        flex: 0 0 100px;
-    }
-    .picture{
-        display: block;
-        margin: 0 auto;
-        margin-top:30px;
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        border:white solid 2px;
-        background-size: cover;
-        background-repeat: none;
-    }
-    .username{
-        flex: 1;
-        padding-left:10px;
-        line-height: 150px;
-        text-align: left;
-        font-size: 18px;
-        color: white;
-    }
-    .user-list{
-        display: flex;
-        width: 100%;
-        height: 50px;
-        background-color: white;
-    }
-    .save{
-        display: block;
-        flex: 1;
-        height: 100%;
-        color: #777777;
-    }
-    .save:hover{
-        text-decoration: none;
-        background-color: #f7f7f7;
-        color: #777777;
-    }
-    .star{
-        display: block;
-        flex: 1;
-        height: 100%;
-        color: #777777;
-    }
-    .star:hover{
-        text-decoration: none;
-        background-color: #f7f7f7;
-        color: #777777;
-    }
-    .num{
-        width: 100%;
-        height: 50%;
-        line-height: 25px;
-        text-align: center;
-    }
-    .name{
-        width:100%;
-        height: 50%;
-        line-height: 25px;
-        text-align: center;
-    }
+.cart_child i{
+    display: block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    color: white;
+}
+.cart_child p{
+    padding:0px;
+    margin: 0px;
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    color: white;
+}
+.user-wrapper{
+    display: flex;
+    width: 100%;
+    height: 150px;
+    background-color: #d0040a;
+}
+.pic{
+    flex: 0 0 100px;
+}
+.picture{
+    display: block;
+    margin: 0 auto;
+    margin-top:30px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border:white solid 2px;
+    background-size: cover;
+    background-repeat: none;
+}
+.username{
+    flex: 1;
+    padding-left:10px;
+    line-height: 150px;
+    text-align: left;
+    font-size: 18px;
+    color: white;
+}
+.user-list{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+}
+.save{
+    display: block;
+    flex: 1;
+    height: 100%;
+    color: #777777;
+}
+.save:hover{
+    text-decoration: none;
+    background-color: #f7f7f7;
+    color: #777777;
+}
+.star{
+    display: block;
+    flex: 1;
+    height: 100%;
+    color: #777777;
+}
+.star:hover{
+    text-decoration: none;
+    background-color: #f7f7f7;
+    color: #777777;
+}
+.num{
+    width: 100%;
+    height: 50%;
+    line-height: 25px;
+    text-align: center;
+}
+.name{
+    width:100%;
+    height: 50%;
+    line-height: 25px;
+    text-align: center;
+}
 
-    .self{
-        margin-top:5px;
-        width: 100%;
-        background: white;
-    }
-    .self-table{
-        margin: 0 auto;
-        width: 90%;
-        height: 100%;
-        text-align: left;
-    }
-    .self-title{
-        width: 132px;
-        height: 25px;
-        font-weight:600; 
-        color: #777777;
-    }
-    #tel{
-        display: none;
-    }
-    #address{
-        display: none;
-    }
-
-
-    .good{
-        margin-top:5px;
-        width: 100%;
-        height:100px;
-        background: white;
-    }
-    .all-good{
-        display: flex;
-        border-bottom:1px solid  #f7f7f7;
-        width: 100%;
-        height: 30px;
-    }
-    .my-good{
-        margin:0px;
-        padding: 0 0 0 10px;
-        flex:1;
-        display: inline-block;
-        line-height: 30px;
-        font-size: 14px;
-        font-weight: 600;
-    }
-    .choise{
-        width: 100%;
-        height: 71px;
-        display: flex;
-    }
-    .nopay{
-        display: block;
-        flex: 1;
-        height: 100%;
-        text-align: center;
-        color: #D0040A;
-    }
-    .nopay:hover{
-        text-decoration: none;
-        color: #D0040A;
-        background-color: #f7f7f7;
-    }
-    .nopay i{
-        display: block;
-        width: 100%;
-        height: 35px;
-        line-height: 35px;
-        color: #d0040a;
-    }
-    .nopay p{
-        display: block;
-        width: 100%;
-        height: 35px;
-        line-height: 35px;
-    }
-    .pay{
-        display: block;
-        flex: 1;
-        height: 100%;
-        text-align: center;
-        color: #D0040A;
-    }
-    .pay:hover{
-        text-decoration: none;
-        color: #D0040A;
-        background-color: #f7f7f7;
-    }
-    .pay i{
-        display: block;
-        width: 100%;
-        height: 35px;
-        line-height: 35px;
-        color: #d0040a;
-    }
-    .pay p{
-        display: block;
-        width: 100%;
-        height: 35px;
-        line-height: 35px;
-    }
-    .user-back{
-        margin: 0 auto;
-        margin-top:15px; 
-        width: 80%;
-    }
-    .back-btn{
-        width: 100%;
-        background-color: #d0040a;
-        color: white;
-        font-weight: 600;
-    }
+.self{
+    margin-top:5px;
+    width: 100%;
+    background: white;
+}
+.self-table{
+    margin: 0 auto;
+    width: 90%;
+    height: 100%;
+    text-align: left;
+}
+.self-title{
+    width: 132px;
+    height: 25px;
+    font-weight:600;
+    color: #777777;
+}
+#tel{
+    display: none;
+}
+#address{
+    display: none;
+}
 
 
-    .tip{
-        display: none;
-        position: fixed;
-        top: 300px;
-        left: 90px;
-        width: 200px;
-        height: 50px;
-        line-height: 50px;
-        text-align: center;
-        z-index: 10000;
-        background-color: white;
-        -moz-box-shadow:0px 0px 12px #8F8F8F;
-        -webkit-box-shadow:0px 0px 12px #8F8F8F;
-        box-shadow:0px 0px 12px #8F8F8F;
-        border-radius: 5px;
-        color: #D0040A;
-    }
+.good{
+    margin-top:5px;
+    width: 100%;
+    height:100px;
+    background: white;
+}
+.all-good{
+    display: flex;
+    border-bottom:1px solid  #f7f7f7;
+    width: 100%;
+    height: 30px;
+}
+.my-good{
+    margin:0px;
+    padding: 0 0 0 10px;
+    flex:1;
+    display: inline-block;
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: 600;
+}
+.choise{
+    width: 100%;
+    height: 71px;
+    display: flex;
+}
+.nopay{
+    display: block;
+    flex: 1;
+    height: 100%;
+    text-align: center;
+    color: #D0040A;
+}
+.nopay:hover{
+    text-decoration: none;
+    color: #D0040A;
+    background-color: #f7f7f7;
+}
+.nopay i{
+    display: block;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    color: #d0040a;
+}
+.nopay p{
+    display: block;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+}
+.pay{
+    display: block;
+    flex: 1;
+    height: 100%;
+    text-align: center;
+    color: #D0040A;
+}
+.pay:hover{
+    text-decoration: none;
+    color: #D0040A;
+    background-color: #f7f7f7;
+}
+.pay i{
+    display: block;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    color: #d0040a;
+}
+.pay p{
+    display: block;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+}
+.user-back{
+    margin: 0 auto;
+    margin-top:15px;
+    width: 80%;
+}
+.back-btn{
+    width: 100%;
+    background-color: #d0040a;
+    color: white;
+    font-weight: 600;
+}
+
+
+.tip{
+    display: none;
+    margin-top: 50%;
+    margin-left: 50%;
+    position: fixed;
+    top: -25px;
+    left: -100px;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    z-index: 10000;
+    background-color: white;
+    -moz-box-shadow:0px 0px 12px #8F8F8F;
+    -webkit-box-shadow:0px 0px 12px #8F8F8F;
+    box-shadow:0px 0px 12px #8F8F8F;
+    border-radius: 5px;
+    color: #D0040A;
 }
 
 
