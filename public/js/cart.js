@@ -165,7 +165,7 @@ $(function(){
         if(isDenglu){
             $('.pay').attr("data-target","#myBuyModal");
             $('.pay').css("background","rgb(247, 30, 37)");
-            $("#buytext").text("您购买的商品总价为："+total+"元，是否确定下单？？");
+            $("#buytext").text("您购买的商品总价为："+total.toFixed(2)+"元，是否确定下单？？");
         }else{
             $(".tip").fadeIn().delay(1000).fadeOut();
         }

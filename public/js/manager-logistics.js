@@ -1,4 +1,13 @@
 $(function(){
+    //注销账户
+    $("#logout").on("click",function(){
+        $.ajax({
+            url:'/api/user/logout',
+            success:function(result){
+                $("#logout").attr("href","/");
+            }
+        })
+    });
     var text=$("<tr id='nul'><td colspan=\"4\" style=\"color: #555; text-align: center;\">查询不到数据</td></tr>");
     //获取用户的已支付数据
     var userName="";

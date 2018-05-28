@@ -1,4 +1,13 @@
 $(function(){
+    //注销账户
+    $("#logout").on("click",function(){
+        $.ajax({
+            url:'/api/user/logout',
+            success:function(result){
+                $("#logout").attr("href","/");
+            }
+        })
+    });
     var text;
     $("#searchSelf").on("click",function(){
         var keyvalue=$("#searchText").val();
