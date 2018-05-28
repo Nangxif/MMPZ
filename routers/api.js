@@ -89,7 +89,7 @@ router.post('/user/login',function(req,res){
             //登录成功之后除了返回登录的信息给客户端，还要先发送一个cookie给服务器端
             req.cookies.set('userinfo', JSON.stringify({
                 _id: userInfo._id,
-                username: userInfo.username,
+                username: encodeURI(userInfo.username),
                 isAdmin: userInfo.isAdmin
             }));
             res.json(responseData);

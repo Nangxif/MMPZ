@@ -16,7 +16,7 @@
 			<a class="picture" href="javascript:;"></a>
 		</div>
 		{% if userInfo._id %}
-		<div class="username">{{userInfo.username}}</div>
+		<div class="username">{{decodeURI(userInfo.username)}}</div>
 		{% else %}
 		<div class="username">未登录</div>
 		{% endif %}
