@@ -79,14 +79,14 @@ router.post('/user/login',function(req,res){
         username:username
         //password:password
     }).then(function(userInfo){
-        if(decrypt(userInfo.password,"nangxi")==password){
+        if(userInfo&&decrypt(userInfo.password,"nangxi")==password){
             responseData.message = "登录成功";
             responseData.userInfo = {
                 _id: userInfo._id,
                 username: userInfo.username,
                 isAdmin: userInfo.isAdmin
             };
-            //登录成功之后除了返回登录的信息给客户端，还要先发送一个cookie给服务器端
+            //登录成功之后除了返回登录的信息给客户端，还要先发送一个cookie给浏览器端
             req.cookies.set('userinfo', JSON.stringify({
                 _id: userInfo._id,
                 username: encodeURI(userInfo.username),
